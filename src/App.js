@@ -43,7 +43,7 @@ class App extends React.Component {
             }
           });
           //console.log(snapShot.data());
-          console.log(this.state);
+          //console.log(this.state);
         });        
       }
 
