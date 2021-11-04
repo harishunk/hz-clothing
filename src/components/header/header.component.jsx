@@ -8,6 +8,9 @@ import CartIcon from '../cart-icon/cart-icon.component'
 
 import { connect } from 'react-redux';
 
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+
+
 import './header.styles.scss'
 
 const linksData = [
@@ -45,6 +48,7 @@ const Header = ({currentUser}) => (
             <Link className="option" to="/signin">Sign in</Link>}
         </div>
          <CartIcon />
+         <CartDropdown />
     </div>
 );
 
