@@ -7,9 +7,7 @@ import CustomButton from "../custom-button/custom-button.component";
 
 import './cart-dropdown.styles.scss';
 
-const CartDropdown = ({cartItems}) => {
-    console.log("drop down rendered");
-    return(
+const CartDropdown = ({cartItems}) => (
     <div className="cart-dropdown">
         <div className="cart-items">
             {cartItems
@@ -18,7 +16,7 @@ const CartDropdown = ({cartItems}) => {
         </div>
         <CustomButton>Go To Chechkout</CustomButton>
     </div>
-)};
+);
 
 
 //memoization  using cart selectors
