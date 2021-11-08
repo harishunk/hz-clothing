@@ -23,3 +23,13 @@ export const selectCartItemsCount = createSelector(
         (accamulatedQuantity, cartItem) => accamulatedQuantity + cartItem.quantity, 0)
     )}
 );
+
+export const selectCartTotal = createSelector(
+    [selectCartItems],
+    cartItems => {
+        
+        //console.log("being called"); to check if memoization worked
+        return (cartItems.reduce(
+        (accamulatedCost, cartItem) => accamulatedCost + (cartItem.quantity * cartItem.price), 0)
+    )}
+);
