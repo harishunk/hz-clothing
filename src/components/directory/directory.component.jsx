@@ -1,10 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { SectionsData } from '../../mocks/directory-mock';
+import { selectSections } from '../../redux/directory/directory.selectors';
+
 import MenuItem from '../menu-item/menu-item.component';
 
 import './directory.styles.scss'
 
-class Directory extends React.Component {
+const Directory = ({ sections }) => (
+    <div className="directory-menu">
+        {
+            sections.map(
+                ({ id, ...otherSectionProps }) => (
+                    <MenuItem key={id} {...otherSectionProps} />
+                )
+            )
+        }
+    </div>
+);
+
+const mapStateToProps = createStructuredSelector({
+    sections: selectSections
+})
+
+//removed class component and using functional component as states will not be required after directory reducer
+/*class Directory extends React.Component {
     constructor() {
         super();
 
@@ -62,6 +84,6 @@ class Directory extends React.Component {
             </div>
         )
     }
-}
+}*/
 
-export default Directory;
+export default connect(mapStateToProps)(Directory);
