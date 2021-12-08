@@ -18,14 +18,14 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 
 import './App.css';
 
-const HatsPage = (props) => {
-  console.log(props)
-  return (
-    <div>
-      <h1> HATS PAGE </h1>
-    </div>
-  )
-}
+// const HatsPage = (props) => {
+//   console.log(props)
+//   return (
+//     <div>
+//       <h1> HATS PAGE </h1>
+//     </div>
+//   )
+// }
 
 class App extends React.Component {
 
@@ -81,8 +81,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/checkout' component={CheckoutPage} />
-          <Route exact path='/shop' component={ShopPage} />
-          <Route path='/shop/hats' component={HatsPage} />
+          <Route path='/shop' component={ShopPage} />
+          {/* <Route path='/shop/hats' component={HatsPage} /> */}
           <Route excat path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         </Switch>
       </div>
